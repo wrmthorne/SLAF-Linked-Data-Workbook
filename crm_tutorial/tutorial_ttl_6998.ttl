@@ -1,0 +1,182 @@
+@prefix crm:   <http://www.cidoc-crm.org/cidoc-crm/> .
+@prefix lincs: <http://id.lincsproject.ca/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+
+<https://saskcollections.org/kenderdine/Detail/objects/6998>
+        a                               crm:E22_Human-Made_Object ;
+        rdfs:label                      "Typhoid Fever (from the Don't Breathe, Don't Drink series)"@en ;
+        crm:P108i_was_produced_by       <http://id.lincsproject.ca/HCPfwVAr6Xw> ;
+        crm:P138i_has_representation    <https://saskcollections.org/kenderdine/media/sask_kenderdine/images/1/2/7/87263_ca_object_representations_media_12755_page.jpg> ;
+        crm:P1_is_identified_by         <http://id.lincsproject.ca/ZkKWN12dK8E>, <http://id.lincsproject.ca/zz6FhU380yJ> ;
+        crm:P24i_changed_ownership_through
+                <http://id.lincsproject.ca/zHjhdpa2eSI> ;
+        crm:P2_has_type                 <http://vocab.getty.edu/aat/300133025> , <http://vocab.getty.edu/aat/300053647> ;
+        crm:P43_has_dimension           <http://id.lincsproject.ca/8jPjjjHEIPl> , <http://id.lincsproject.ca/ZmurDUDmrvw> ;
+        crm:P45_consists_of             <http://vocab.getty.edu/aat/300014250> , <http://www.wikidata.org/entity/Q1435588>, <http://vocab.getty.edu/aat/300227764> ;
+        crm:P52_has_current_owner       <http://www.wikidata.org/entity/Q1514848> ;
+        crm:P67i_is_referred_to_by      <http://id.lincsproject.ca/SXGQPWZUodL> , <http://id.lincsproject.ca/rf401CzVnFr> , <http://id.lincsproject.ca/Ug2Ioz6g445> .
+
+<http://id.lincsproject.ca/ZkKWN12dK8E>
+        a                              crm:E33_E41_Linguistic_Appellation ;
+        rdfs:label                     "Title of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P190_has_symbolic_content  "Typhoid Fever (from the Don't Breathe, Don't Drink series)"@en ;
+        crm:P2_has_type                <http://vocab.getty.edu/aat/300417193> .
+
+<http://id.lincsproject.ca/HCPfwVAr6Xw>
+        a                       crm:E12_Production ;
+        rdfs:label              "Production event of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P14_carried_out_by  <http://vocab.getty.edu/ulan/500126594> ;
+        crm:P4_has_time-span    <http://id.lincsproject.ca/iHKAd9PDZ8N> .
+
+<http://id.lincsproject.ca/iHKAd9PDZ8N>
+        a                            crm:E52_Time-Span ;
+        rdfs:label                   "Time-span of production event of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P2_has_type              <http://vocab.getty.edu/aat/300435723> ;
+        crm:P82_at_some_time_within  "2016" ;
+        crm:P82a_begin_of_the_begin  "2016-01-01"^^xsd:date ;
+        crm:P82b_end_of_the_end      "2016-12-31"^^xsd:date .
+
+<https://saskcollections.org/kenderdine/media/sask_kenderdine/images/1/2/7/87263_ca_object_representations_media_12755_page.jpg>
+        a           crm:E36_Visual_Item ;
+        rdfs:label  "Image of University of Saskatchewan Art Gallery object 2020.011.006"@en .
+
+<http://id.lincsproject.ca/zz6FhU380yJ>
+        a                              crm:E42_Identifier ;
+        rdfs:label                     "Accession Number of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P190_has_symbolic_content  "2020.011.006" ;
+        crm:P2_has_type                <http://vocab.getty.edu/aat/300312355> .
+
+<http://id.lincsproject.ca/zHjhdpa2eSI>
+        a                     crm:E8_Acquisition ;
+        rdfs:label            "Acquisition of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P4_has_time-span  <http://id.lincsproject.ca/fdJSVqOpJOI> .
+
+<http://id.lincsproject.ca/fdJSVqOpJOI>
+        a                            crm:E52_Time-Span ;
+        rdfs:label                   "Time-span of acquisition event of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P82_at_some_time_within  "2020" ;
+        crm:P82a_begin_of_the_begin  "2020-01-01"^^xsd:date ;
+        crm:P82b_end_of_the_end      "2020-12-31"^^xsd:date .
+
+<http://id.lincsproject.ca/8jPjjjHEIPl>
+        a                  crm:E54_Dimension ;
+        rdfs:label         "Height of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P2_has_type    <http://vocab.getty.edu/aat/300055644> ;
+        crm:P90_has_value  "20.5" ;
+        crm:P91_has_unit   <http://vocab.getty.edu/aat/300379098> .
+
+<http://id.lincsproject.ca/ZmurDUDmrvw>
+        a                  crm:E54_Dimension ;
+        rdfs:label         "Width of University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P2_has_type    <http://vocab.getty.edu/aat/300055647> ;
+        crm:P90_has_value  "20.5" ;
+        crm:P91_has_unit   <http://vocab.getty.edu/aat/300379098> .
+
+<http://id.lincsproject.ca/SXGQPWZUodL>
+        a                              crm:E33_Linguistic_Object ;
+        rdfs:label                     "Materials statement for University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P190_has_symbolic_content  "glass beads, thread, cloth backing"@en ;
+        crm:P2_has_type                <http://vocab.getty.edu/aat/300435429> .
+
+<http://id.lincsproject.ca/rf401CzVnFr>
+        a                              crm:E33_Linguistic_Object ;
+        rdfs:label                     "Credit line for University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P190_has_symbolic_content  "Collection of the University of Saskatchewan.  Purchase, 2020."@en ;
+        crm:P2_has_type                <http://vocab.getty.edu/aat/300435418> .
+
+<http://id.lincsproject.ca/Ug2Ioz6g445>
+        a                              crm:E33_Linguistic_Object ;
+        rdfs:label                     "Dimension statement for University of Saskatchewan Art Gallery object 2020.011.006"@en ;
+        crm:P190_has_symbolic_content  "20.5 cm W x 20.5 cm H" ;
+        crm:P2_has_type                <http://vocab.getty.edu/aat/300435430> .
+
+<http://vocab.getty.edu/ulan/500126594>
+        a           crm:E21_Person ;
+        rdfs:label  "Ruth Cuthand"@en ; 
+        crm:P98i_was_born_in    <http://id.lincsproject.ca/HD87zUodL9i> .
+
+<http://id.lincsproject.ca/HD87zUodL9i>
+        a           crm:E67_Birth;
+        rdfs:label  "Birth of Ruth Cuthand"@en ; 
+        crm:P7_took_place_at    <http://id.lincsproject.ca/treaty_6> ;
+        crm:P4_has_time-span    <http://id.lincsproject.ca/7iwHAd9Pi38> .
+
+<http://id.lincsproject.ca/treaty_6>
+        a                            crm:E53_Place ;
+        rdfs:label                   "Treaty 6 Territory"@en .
+
+<http://id.lincsproject.ca/7iwHAd9Pi38>
+        a                            crm:E52_Time-Span ;
+        rdfs:label                   "Time-span of brith of Ruth Cuthand"@en ;
+        crm:P82_at_some_time_within  "1954" ;
+        crm:P82a_begin_of_the_begin  "1954-01-01"^^xsd:date ;
+        crm:P82b_end_of_the_end      "1954-12-31"^^xsd:date .
+
+<http://vocab.getty.edu/aat/300417193> 
+        a           crm:E55_Type ;
+        rdfs:label "titles (general, names)"@en .
+
+<http://vocab.getty.edu/aat/300435723>  
+        a           crm:E55_Type ;
+        rdfs:label "circa"@en .
+
+<http://vocab.getty.edu/aat/300312355>  
+        a           crm:E55_Type ;
+        rdfs:label "accession numbers"@en .
+
+<http://vocab.getty.edu/aat/300133025>  
+        a           crm:E55_Type ;
+        rdfs:label "works of art"@en .
+
+<http://vocab.getty.edu/aat/300053647>  
+        a           crm:E55_Type ;
+        rdfs:label "beadwork (visual works)"@en .
+
+<http://vocab.getty.edu/aat/300055644>  
+        a           crm:E55_Type ;
+        rdfs:label "height"@en .
+
+<http://vocab.getty.edu/aat/300055647>  
+        a           crm:E55_Type ;
+        rdfs:label "width"@en .
+
+<http://vocab.getty.edu/aat/300014250>  
+        a           crm:E55_Type ;
+        rdfs:label "thread"@en .
+
+<http://vocab.getty.edu/aat/300227764>  
+        a           crm:E55_Type ;
+        rdfs:label "backing (textile material)"@en .
+
+<http://vocab.getty.edu/aat/300162391>  
+        a           crm:E55_Type ;
+        rdfs:label "cloth"@en .
+
+<http://vocab.getty.edu/aat/300435429>  
+        a           crm:E55_Type ;
+        rdfs:label "materials/technique description"@en .
+
+<http://vocab.getty.edu/aat/300435418>  
+        a           crm:E55_Type ;
+        rdfs:label "credit line"@en .
+
+<http://vocab.getty.edu/aat/300435430>  
+        a           crm:E55_Type ;
+        rdfs:label "dimensions description"@en .
+
+<http://vocab.getty.edu/aat/300379098>
+        a           crm:E58_Measurement_Unit ;
+        rdfs:label  "Centimetres"@en .
+
+<http://www.wikidata.org/entity/Q1435588>
+        a           crm:E57_Material ;
+        rdfs:label  "glass beads"@en .
+
+<http://www.wikidata.org/entity/Q1514848> 
+        a                       crm:E74_Group ;
+        rdfs:label      "University of Saskatchewan Art Gallery"@en . 
