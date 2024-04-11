@@ -1,0 +1,74 @@
+#QUERY 1: What were the 10 most popular materials used in objects acquired between 2000-2010?
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lincs: <http://www.id.lincsproject.ca/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT DISTINCT ?material (COUNT(?material) as ?mcount)
+WHERE { 
+  GRAPH <http://graph.lincsproject.ca/usaskart>{
+  ?artwork a crm:E22_Human-Made_Object ; 
+    crm:P45_consists_of ?material .
+    ?acq a crm:E8_Acquisition ; 
+    crm:P24_transferred_title_of ?artwork ;
+  crm:P4_has_time-span ?acq_date .
+    ?acq_date crm:P82a_begin_of_the_begin ?start ; 
+              crm:P82b_end_of_the_end ?end .
+    FILTER(?start >= "2000-01-01"^^xsd:date && ?end <= "2010-12-31"^^xsd:date)
+  }
+}
+GROUP BY ?material
+ORDER BY DESC(?mcount)
+LIMIT 10
+
+
+
+#QUERY 2: Who made the largest object in the collection, what type of artwork is it, what is it made of, and how big is it?
+#We are going to say that the "largest object" is the one with the largest number when we times WxH. All units are in centimetres and greater than or equal to "1". 
+
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX lincs: <http://www.id.lincsproject.ca/>
+PREFIX skos: <http://www.w3.org/2004/02/skos/core#>
+PREFIX crm: <http://www.cidoc-crm.org/cidoc-crm/>
+
+SELECT DISTINCT ?artwork ?name ?typeLabel ?materialLabel ?copy (?HnumericValue * ?WnumericValue AS ?result)
+WHERE { 
+  GRAPH <http://graph.lincsproject.ca/usaskart>{
+  ?production a crm:E12_Production ; 
+  crm:P108_has_produced ?artwork ;
+  crm:P14_carried_out_by ?artist .
+  ?artist rdfs:label ?name .
+  ?text a crm:E33_Linguistic_Object ; 
+  crm:P2_has_type <http://vocab.getty.edu/aat/300435430> ;
+  crm:P190_has_symbolic_content ?copy ;
+  crm:P67_refers_to ?artwork .
+  ?artwork a crm:E22_Human-Made_Object ;
+    rdfs:label ?artworkLabel ;
+    crm:P2_has_type ?artworkType ;
+    crm:P45_consists_of ?materials . 
+    ?artworkType rdfs:label ?typeLabel .
+    ?materials rdfs:label ?materialLabel .
+    FILTER (?artworkType != <http://vocab.getty.edu/aat/300133025>) .
+    OPTIONAL {
+    ?artwork crm:P43_has_dimension ?height .
+      ?height crm:P90_has_value ?hValue ;
+          crm:P2_has_type <http://vocab.getty.edu/aat/300055644> .
+      BIND(xsd:decimal(?hValue) AS ?HnumericValue)
+      FILTER(?HnumericValue >="1.0"^^xsd:decimal)
+    }
+    OPTIONAL {
+    ?artwork crm:P43_has_dimension ?width .
+      ?width crm:P90_has_value ?wValue ;
+          crm:P2_has_type <http://vocab.getty.edu/aat/300055647> .
+      BIND(xsd:decimal(?wValue) AS ?WnumericValue)
+      FILTER(?WnumericValue >="1.0"^^xsd:decimal)
+    }
+  }
+}
+ORDER BY DESC(?result)
+LIMIT 2
